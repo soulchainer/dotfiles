@@ -1,0 +1,13 @@
+!Scroll_Lock (Bloq Despl) es ahora Control_R
+keycode 78 = Control_R
+!Control_R es ahora Super_L
+keycode 105 = Super_L
+keycode 37 = Control_L
+!Change modifiers
+clear Control
+!clear Mod1
+!clear Mod2
+!clear Mod3
+!clear Mod4
+!clear Mod5
+add Control = Control_L Control_R

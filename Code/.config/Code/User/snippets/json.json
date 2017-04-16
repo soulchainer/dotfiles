@@ -1,0 +1,66 @@
+{
+    "package.json for gulp, Browserify, ES6 & SASS projects": {
+        "prefix": "pckgfys",
+        "body": [
+            "{",
+            "\t\"name\": \"$1\",",
+            "\t\"version\": \"0.1.0\",",
+            "\t\"description\": \"$2\",",
+            "\t\"author\": \"Juan Riquelme <juanriqgon@tutanota.com>\",",
+            "\t\"devDependencies\": {",
+            "\t\t\"babel-preset-es2015\": \"^0.0.0\",",
+            "\t\t\"browser-sync\": \"^0.0.0\",",
+            "\t\t\"browserify\": \"^0.0.0\",",
+            "\t\t\"gulp\": \"^0.0.0\",",
+            "\t\t\"gulp-autoprefixer\": \"^0.0.0\",",
+            "\t\t\"gulp-babel\": \"^0.0.0\",",
+            "\t\t\"gulp-install\": \"^0.0.0\",",
+            "\t\t\"gulp-postcss\": \"^0.0.0\",",
+            "\t\t\"gulp-sass\": \"^0.0.0\",",
+            "\t\t\"gulp-sourcemaps\": \"^0.0.0\",",
+            "\t\t\"gulp-uglify\": \"^0.0.0\",",
+            "\t\t\"gulp-util\": \"^0.0.0\",",
+            "\t\t\"vinyl-buffer\": \"^0.0.0\",",
+            "\t\t\"vinyl-source-stream\": \"^0.0.0\"",
+            "\t}",
+            "}"
+        ],
+        "description": "package.json for gulp, Browserify, ES6 & SASS projects"
+    },
+    "package.json for gulp, ES6 & SASS projects": {
+        "prefix": "pckgs",
+        "body": [
+            "{",
+            "\t\"name\": \"$1\",",
+            "\t\"version\": \"0.1.0\",",
+            "\t\"description\": \"$2\",",
+            "\t\"author\": \"Juan Riquelme <juanriqgon@tutanota.com>\",",
+            "\t\"devDependencies\": {",
+            "\t\t\"babel-preset-es2015\": \"^0.0.0\",",
+            "\t\t\"browser-sync\": \"^0.0.0\",",
+            "\t\t\"gulp\": \"^0.0.0\",",
+            "\t\t\"gulp-autoprefixer\": \"^0.0.0\",",
+            "\t\t\"gulp-babel\": \"^0.0.0\",",
+            "\t\t\"gulp-clean-css\": \"^0.0.0\",",
+            "\t\t\"gulp-htmlmin\": \"^0.0.0\",",
+            "\t\t\"gulp-load-plugins\": \"^0.0.0\",",
+            "\t\t\"gulp-postcss\": \"^0.0.0\",",
+            "\t\t\"gulp-sass\": \"^0.0.0\",",
+            "\t\t\"gulp-sourcemaps\": \"^0.0.0\",",
+            "\t\t\"gulp-uglify\": \"^0.0.0\",",
+            "\t\t\"gulp-util\": \"^0.0.0\"",
+            "\t}",
+            "}"
+        ],
+        "description": "package.json for gulp, ES6 & SASS projects"
+    },
+    ".jshintrc for ES6": {
+        "prefix": "jshint6",
+        "body": [
+            "{",
+            "\t\"esnext\": true",
+            "}"
+        ],
+        "description": ".jshintrc for ES6"
+    }
+}

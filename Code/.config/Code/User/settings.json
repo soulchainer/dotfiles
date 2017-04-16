@@ -1,0 +1,260 @@
+// Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
+{
+
+// Editor
+
+    // Controla la familia de fuentes.
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+
+    // Controla el tamaño de fuente en píxeles.
+    "editor.fontSize": 15,
+
+    // Columnas en las que mostrar reglas verticales
+    "editor.rulers": [80],
+
+    // El número de espacios a los que equivale una tabulación. Este valor se invalida según el contenido del archivo cuando `editor.detectIndentation` está activado.
+    "editor.tabSize": 2,
+
+    // Controla si las selecciones tienen esquinas redondeadas
+    "editor.roundedSelection": false,
+
+    // Controla si el editor se seguirá desplazando después de la última línea
+  "editor.scrollBeyondLastLine": false,
+
+    // Controla si las líneas deben ajustarse. Las líneas se ajustarán en min(editor.wrappingColumn, viewportWidthInColumns).
+    "editor.wordWrap": "wordWrapColumn",
+
+    // Controls the wrapping column of the editor when `editor.wordWrap` is 'wordWrapColumn' or 'bounded'.
+    "editor.wordWrapColumn": 80,
+
+    // Inserta fragmentos de código cuando el prefijo coincide. Funciona mejor si la opción 'quickSuggestions' no está habilitada.
+    "editor.tabCompletion": true,
+
+    // Habilita las ligaduras tipográficas.
+    "editor.fontLigatures": true,
+
+    // Controla cómo debe representar el editor los espacios en blanco. Las posibilidades son "none", "boundary" y "all". La opción "boundary" no representa los espacios individuales entre palabras.
+    "editor.renderWhitespace": "all",
+
+    // Controla si el editor debe representar caracteres de control
+    "editor.renderControlCharacters": true,
+
+    // Controla si el editor debe representar guías de sangría.
+    "editor.renderIndentGuides": true,
+
+    // Controls if the editor should allow to move selections via drag and drop.
+    "editor.dragAndDrop": true,
+
+// Ventana
+
+  // Controla si las carpetas deben abrirse en una ventana nueva o reemplazar la última ventana activa.
+  // - default: las carpetas se abrirán en una ventana nueva, a menos que se seleccione una carpeta desde la aplicación (por ejemplo, desde el menú Archivo)
+  // - on: las carpetas se abrirán en una ventana nueva
+  // - off: las carpetas reemplazarán la última ventana activa
+  // Tenga en cuenta que aún puede haber casos en los que este parámetro se ignore (por ejemplo, al usar la opción de la línea de comandos -new-window o -reuse-window).
+  "window.openFoldersInNewWindow": "on",
+
+// Git
+
+    // Ruta del Git ejecutable
+    "git.path": "/usr/bin/git",
+
+    // Si la búsqueda automática está habilitada.
+    "git.autofetch": false,
+
+    // Confirmar antes de sincronizar repositorios GIT.
+    "git.confirmSync": true,
+
+// CSS
+
+    // Do not use duplicate style definitions
+    "css.lint.duplicateProperties": "warning",
+
+    // Import statements do not load in parallel
+    "css.lint.importStatement": "warning",
+
+    // Do not use width or height when using padding or border
+    "css.lint.boxModel": "warning",
+
+    // The universal selector (*) is known to be slow
+    "css.lint.universalSelector": "warning",
+
+    // No unit for zero needed
+    "css.lint.zeroUnits": "warning",
+
+    // Unknown vendor specific property.
+    "css.lint.unknownVendorSpecificProperties": "warning",
+
+    // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+    "css.lint.important": "warning",
+
+    // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+    "css.lint.float": "warning",
+
+    // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+    "css.lint.idSelector": "warning",
+
+// SCSS (Sass)
+
+    // Do not use duplicate style definitions
+    "scss.lint.duplicateProperties": "warning",
+
+    // Import statements do not load in parallel
+    "scss.lint.importStatement": "warning",
+
+    // Do not use width or height when using padding or border
+    "scss.lint.boxModel": "warning",
+
+    // The universal selector (*) is known to be slow
+    "scss.lint.universalSelector": "warning",
+
+    // No unit for zero needed
+    "scss.lint.zeroUnits": "warning",
+
+    // Unknown vendor specific property.
+    "scss.lint.unknownVendorSpecificProperties": "warning",
+
+    // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+    "scss.lint.important": "warning",
+
+    // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+    "scss.lint.float": "warning",
+
+    // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+    "scss.lint.idSelector": "warning",
+
+// LESS
+
+    // Do not use duplicate style definitions
+    "less.lint.duplicateProperties": "warning",
+
+    // Import statements do not load in parallel
+    "less.lint.importStatement": "warning",
+
+    // Do not use width or height when using padding or border
+    "less.lint.boxModel": "warning",
+
+    // The universal selector (*) is known to be slow
+    "less.lint.universalSelector": "warning",
+
+    // No unit for zero needed
+    "less.lint.zeroUnits": "warning",
+
+    // Unknown vendor specific property.
+    "less.lint.unknownVendorSpecificProperties": "warning",
+
+    // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+    "less.lint.important": "warning",
+
+    // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+    "less.lint.float": "warning",
+
+    // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+    "less.lint.idSelector": "warning",
+
+// HTML
+
+    // Indent <head> and <body> sections.
+    "html.format.indentInnerHtml": true,
+
+    // Format and indent {{#foo}} and {{/foo}}.
+    "html.format.indentHandlebars": true,
+
+    // Configures if the built-in HTML language support suggests Angular V1 tags and properties.
+    "html.suggest.angular1": false,
+
+    // Configures if the built-in HTML language support suggests Ionic tags, properties and values.
+    "html.suggest.ionic": false,
+
+// Markdown
+
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn"
+    },
+
+// PHP
+
+    // Indica si la validación de PHP está habilitada o no.
+    "php.validate.enable": false,
+
+    // Señala al ejecutable PHP.
+    "php.validate.executablePath": null,
+
+// Terminal externo
+
+    // Personaliza qué terminal debe ejecutarse en Linux.
+    "terminal.external.linuxExec": "sakura",
+
+// Telemetría
+
+    // Habilite los datos de uso y los errores para enviarlos a Microsoft.
+    "telemetry.enableTelemetry": false,
+
+    // Habilite los informes de bloqueo para enviarlos a Microsoft.
+	// Esta opción requiere que se reinicie para surtir efecto.
+    "telemetry.enableCrashReporter": false,
+
+// Terminal integrado
+
+  // Controla si las ligaduras tipográficas están habilitadas en el terminal.
+  "terminal.integrated.fontLigatures": true,
+
+// puglint configuration options
+
+  // Control whether pug-lint is enabled for Pug/Jade files or not.
+  "puglint.enable": true,
+
+// Python Configuration
+
+  // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
+  "python.pythonPath": "/usr/bin/python",
+
+  // Whether to lint Python files.
+  "python.linting.enabled": true,
+
+  // Whether to lint Python files using pylint.
+  "python.linting.pylintEnabled": false,
+
+  // Whether to lint Python files using flake8
+  "python.linting.flake8Enabled": true,
+
+  // Path to flake8, you can use a custom version of flake8 by modifying this setting to include the full path.
+  "python.linting.flake8Path": "flake8",
+
+  // Arguments passed in. Each argument is a separate item in the array.
+  "python.linting.flake8Args": [],
+
+  // The output window name for the linting messages, defaults to Python output window.
+  "python.linting.outputWindow": "Python",
+
+  // Provider for formatting. Possible options include 'autopep8' and 'yapf'.
+  "python.formatting.provider": "autopep8",
+
+  // Path to autopep8, you can use a custom version of autopep8 by modifying this setting to include the full path.
+  "python.formatting.autopep8Path": "autopep8",
+
+  // Arguments passed in. Each argument is a separate item in the array.
+  "python.formatting.autopep8Args": [],
+
+  // Format the document upon saving.
+  "python.formatting.formatOnSave": false,
+
+  // List of paths to libraries and the like that need to be imported by auto complete engine. E.g. when using Google App SDK, the paths are not in system path, hence need to be added into this list.
+  "python.autoComplete.extraPaths": ["/home/soulchainer/github/qtile/libqtile"],
+
+  // Whether to enable or disable unit testing using pytest.
+  "python.unitTest.pyTestEnabled": true,
+
+  // Path to pytest (py.test), you can use a custom version of pytest by modifying this setting to include the full path.
+  "python.unitTest.pyTestPath": "py.test",
+
+  // Arguments passed in. Each argument is a separate item in the array.
+  "python.unitTest.pyTestArgs": [],
+
+  // Python launch arguments to use when executing a file in the terminal.
+  "python.terminal.launchArgs": [],
+  "workbench.welcome.enabled": true,
+  "workbench.colorTheme": "Monokai",
+  "workbench.iconTheme": "vs-seti",
+"window.zoomLevel": 0
+}

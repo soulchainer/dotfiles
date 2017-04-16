@@ -1,0 +1,18 @@
+[user]
+	name = soulchainer
+	email = soulchainer@gmail.com
+[credential]
+	helper = cache
+[core]
+	editor = nvim
+[gui]
+	editor = code
+[merge]
+	tool = code
+[push]
+	default = current
+[cola]
+	fontdiff = Liberation Mono,13,-1,5,50,0,0,0,0,0
+	textwidth = 72
+[color]
+	ui = true

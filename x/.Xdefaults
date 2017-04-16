@@ -1,0 +1,76 @@
+!-------------------------------------------------------------------------------
+!
+!	U R X V T - Settings
+!
+URxvt*geometry:					80x25
+URxvt*foreground:				grey80
+URxvt*borderLess:				false
+URxvt*depth:					32
+URxvt*background:				[90]#000000
+! fake transparency
+urxvt*transparent: true
+urxvt*shading: 10
+URxvt*scrollBar_right:				true
+URxvt*font:					xft:Inconsolata:pixelsize=17:antialias=true:hinting=true
+URxvt*cursorBlink:				true
+URxvt*cursorUnderline:				true
+URxvt*scrollColor:				#111111
+URxvt*perl-ext:
+URxvt*perl-ext-common:
+
+!Nombre de terminal, para resolver problemas con SSH
+URxvt*termName: rxvt
+
+!Cursor
+Xcursor.theme: Vainilla-DMZ-AA Xcursor.size: 22
+
+URxvt*saveLines: 8192
+URxvt.scrollBar: false
+URxvt.cursorColor: #90EE90
+
+!Colorear páginas man
+URxvt.colorIT:      #87af5f
+URxvt.colorBD:      #d7d7d7
+URxvt.colorUL:      #87afd7
+
+! vim: set filetype=xdefaults :
+! gjm scheme
+! *background: rgba:0000/0000/0000/dddd
+! Tema de http://www.xcolors.net/
+
+*cursorColor:   #cee318
+
+*background:    #1C1C1C
+*foreground:    #c5c5c5
+
+! black
+*color0:        #1C1C1C
+*color8:        #666666
+
+! red
+*color1:        #ff005b
+*color9:        #ff00a0
+
+! green
+*color2:        #cee318
+*color10:       #ccff00
+
+! yellow
+*color3:        #ffe755
+*color11:       #ff9f00
+
+! blue
+*color4:        #048ac7
+*color12:       #48c6ff
+
+! magenta
+*color5:        #833c9f
+*color13:       #be67e1
+
+! cyan
+*color6:        #0ac1cd
+*color14:       #63e7f0
+
+! white
+*color7:        #e5e5e5
+*color15:       #f3f3f3
