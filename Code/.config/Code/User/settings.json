@@ -255,6 +255,6 @@
   "python.terminal.launchArgs": [],
   "workbench.welcome.enabled": true,
   "workbench.colorTheme": "Monokai",
-  "workbench.iconTheme": "vs-seti",
+"workbench.iconTheme": "vscode-icons",
 "window.zoomLevel": 0
 }

@@ -16,3 +16,5 @@
 	textwidth = 72
 [color]
 	ui = true
+[commit]
+	verbose = 1
