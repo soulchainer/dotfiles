@@ -5,132 +5,30 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# ex - archive extractor
-# usage: ex <file>
-ex ()
-{
-  if [ -f "$1" ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf "$1"   ;;
-      *.tar.gz)    tar xzf "$1"   ;;
-      *.bz2)       bunzip2 "$1"   ;;
-      *.rar)       unrar x "$1"     ;;
-      *.gz)        gunzip "$1"    ;;
-      *.tar)       tar xf "$1"    ;;
-      *.tbz2)      tar xjf "$1"   ;;
-      *.tgz)       tar xzf "$1"   ;;
-      *.zip)       unzip "$1"     ;;
-      *.Z)         uncompress "$1";;
-      *.7z)        7z x "$1"      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
-############### Aliases ###############
+### EXPORTS
 
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -lh --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias la='ls -lah --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias grep='grep --color=tty -d skip'
+## GO
+GOPATH="$HOME/Dev/go"
 
-alias cpsec="cp -i"       # confirm before overwriting something
-alias cpch="cp -Ru"       # copy files only if changed, for projects
-alias diff="diff --color" # colorize diff
+## For developing Qtile
+QTILE_DEV="$HOME/.config/qtile/develop"
 
-alias df='df -h'          # human-readable sizes
-alias free='free -m'      # show sizes in MB
-
-alias np='nano PKGBUILD'
-alias vim='nvim'
-
-# Apache
-alias apache='sudo systemctl start httpd.service'
-alias apaches='sudo systemctl stop httpd.service'
-alias apacher='sudo systemctl restart httpd.service'
-
-# mysql
-alias mysqli='sudo systemctl start mysqld.service'
-alias mysqls='sudo systemctl stop mysqld.service'
-
-# Teamviewer for pair programming
-alias pair='sudo systemctl start teamviewerd'
-alias pairs='sudo systemctl stop teamviewerd'
-
-# SSH
-alias pissh='ssh -p 7766 osmc@192.168.1.11'
-
-# For developing Qtile
-alias dqtile='startx $QTILE_DEV/.xinitrc'
-alias xqtile='startx $QTILE_DEV/.xtrace-xinitrc'
-
-# Python
-# Simple HTTP server (root folder is the current working folder)
-alias pyserv='python -m http.server 8080'
-# Python virtual environments (.virtualenvs) with virtualenvwrapper
-# http://virtualenvwrapper.readthedocs.org/en/latest/
-alias venvson='source virtualenvwrapper.sh' # enables virtual env. manager
-alias addvenv='mkvirtualenv' # creates and enables a new env. (name given)
-# same, but access restringed to globally installed python packages only
-alias addvenvsys='mkvirtualenv --system-site-packages'
-alias addvenv2='mkvirtualenv -p /usr/bin/python2.7' # with python2.7
-# "workon environment_name" for enable/change an environment
-# "workon" for list all the environments available
-alias venvoff='deactivate'  # leave the environment
-alias rmvenv='rmvirtualenv' # remove an environment (name given)
-alias lsvenv='lssitepackages' # list content of venv's site-packages folder
-
-# Pelican blog
-alias blog='cd ~/Dev/Proyectos/Web/blog/ && venvson && workon blog'
-alias pelicanup='pelican -s publishconf.py'
-
-# PHP
-# Simple HTTP server (root folder is the current folder)
-alias phpserv='php -S localhost:8000'
-
-############### Exports ###############s
-
-# PATH
-
-## USER BIN
-export PATH="$PATH:$HOME/bin"
-## NODE
-PATH="$PATH:$HOME/.npm-global/bin"
-## PHP
-PATH="$PATH:$HOME/.config/composer/vendor/bin"
-## RUBY
-PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-
-# GO
-export GOPATH="$HOME/Dev/go"
-
-# For developing Qtile
-export QTILE_DEV="$HOME/.config/qtile/develop"
-
-export EDITOR="nvim"
-
-# WII
-export WIILOAD=tcp:192.168.1.135
-
-# PYTHON
+## PYTHON
 # Limit pip usage to virtual environments
-export PIP_REQUIRE_VIRTUALENV=true
+PIP_REQUIRE_VIRTUALENV=true
 # Set destiny folder for new virtual environments
-export WORKON_HOME=~/.virtualenvs
+WORKON_HOME=~/.virtualenvs
 
-# If you get distorted sound in skype, try adding PULSE_LATENCY_MSEC=60 to your
-# env before starting skype. Something like 'export PULSE_LATENCY_MSEC=60' in
-# .bashrc, for example.
-export PULSE_LATENCY_MSEC=60
-
-# Prompt
+## PROMPT
 PS1="\[\e[1;36m\]┌─[\[\e[1;93m\]\u\[@${HOSTNAME%%.*}\\e[1;36m\]] \n\[\e[1;36m\]└─\[\e[1;36m\][\[\e[1;93m\]\W\[\e[1;36m\]] \[\e[1;92m\]\$ \[\e[10;95m\]\(^3^)/ \[\e[0m\]"
 
-# gitprompt configuration
+## GIT PROMPT CONFIGURATION ##
 
-# Set config variables first
+# SET CONFIG VARIABLES FIRSTet config variables first
 GIT_PROMPT_ONLY_IN_REPO=1
 
 # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
@@ -145,13 +43,14 @@ GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
 # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
 # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
 
-# as last entry source the gitprompt script
 # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
 # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+
+# source the gitprompt script
 source ~/.bash-git-prompt/gitprompt.sh
 
-# By default, the general appearance of the prompt is::
+# By default, the general appearance of the git prompt is::
 
 # (<branch> <branch tracking>|<local status>)
 
@@ -172,9 +71,6 @@ source ~/.bash-git-prompt/gitprompt.sh
 #   When the branch name starts with a colon :, it means it's actually a hash,
 # not a branch (although it should be pretty clear, unless you name your
 # branches like hashes :-)
-
-# Symfony
-eval "$(symfony-autocomplete)"
 
 ########### Color codes ###############
 # For usage in Prompt declaration need to be closed like \[color_code\]
@@ -250,6 +146,28 @@ eval "$(symfony-autocomplete)"
 # \e[0;106m    # Cyan
 # \e[0;107m   # White
 
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[ -f /home/soulchainer/.npm-global/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash ] && . /home/soulchainer/.npm-global/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash
+## FUNCTIONS
+
+# ex - archive extractor
+# usage: ex <file>
+ex ()
+{
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf "$1"   ;;
+      *.tar.gz)    tar xzf "$1"   ;;
+      *.bz2)       bunzip2 "$1"   ;;
+      *.rar)       unrar x "$1"     ;;
+      *.gz)        gunzip "$1"    ;;
+      *.tar)       tar xf "$1"    ;;
+      *.tbz2)      tar xjf "$1"   ;;
+      *.tgz)       tar xzf "$1"   ;;
+      *.zip)       unzip "$1"     ;;
+      *.Z)         uncompress "$1";;
+      *.7z)        7z x "$1"      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}

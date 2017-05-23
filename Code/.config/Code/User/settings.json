@@ -3,47 +3,47 @@
 
 // Editor
 
-    // Controla la familia de fuentes.
+  // Controla la familia de fuentes.
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
 
-    // Controla el tamaño de fuente en píxeles.
-    "editor.fontSize": 15,
+  // Controla el tamaño de fuente en píxeles.
+  "editor.fontSize": 15,
 
-    // Columnas en las que mostrar reglas verticales
-    "editor.rulers": [80],
+  // Columnas en las que mostrar reglas verticales
+  "editor.rulers": [80],
 
-    // El número de espacios a los que equivale una tabulación. Este valor se invalida según el contenido del archivo cuando `editor.detectIndentation` está activado.
-    "editor.tabSize": 2,
+  // El número de espacios a los que equivale una tabulación. Este valor se invalida según el contenido del archivo cuando `editor.detectIndentation` está activado.
+  "editor.tabSize": 2,
 
-    // Controla si las selecciones tienen esquinas redondeadas
-    "editor.roundedSelection": false,
+  // Controla si las selecciones tienen esquinas redondeadas
+  "editor.roundedSelection": false,
 
-    // Controla si el editor se seguirá desplazando después de la última línea
+  // Controla si el editor se seguirá desplazando después de la última línea
   "editor.scrollBeyondLastLine": false,
 
-    // Controla si las líneas deben ajustarse. Las líneas se ajustarán en min(editor.wrappingColumn, viewportWidthInColumns).
-    "editor.wordWrap": "wordWrapColumn",
+  // Controla si las líneas deben ajustarse. Las líneas se ajustarán en min(editor.wrappingColumn, viewportWidthInColumns).
+  "editor.wordWrap": "wordWrapColumn",
 
-    // Controls the wrapping column of the editor when `editor.wordWrap` is 'wordWrapColumn' or 'bounded'.
-    "editor.wordWrapColumn": 80,
+  // Controls the wrapping column of the editor when `editor.wordWrap` is 'wordWrapColumn' or 'bounded'.
+  "editor.wordWrapColumn": 80,
 
-    // Inserta fragmentos de código cuando el prefijo coincide. Funciona mejor si la opción 'quickSuggestions' no está habilitada.
-    "editor.tabCompletion": true,
+  // Inserta fragmentos de código cuando el prefijo coincide. Funciona mejor si la opción 'quickSuggestions' no está habilitada.
+  "editor.tabCompletion": true,
 
-    // Habilita las ligaduras tipográficas.
-    "editor.fontLigatures": true,
+  // Habilita las ligaduras tipográficas.
+  "editor.fontLigatures": true,
 
-    // Controla cómo debe representar el editor los espacios en blanco. Las posibilidades son "none", "boundary" y "all". La opción "boundary" no representa los espacios individuales entre palabras.
-    "editor.renderWhitespace": "all",
+  // Controla cómo debe representar el editor los espacios en blanco. Las posibilidades son "none", "boundary" y "all". La opción "boundary" no representa los espacios individuales entre palabras.
+  "editor.renderWhitespace": "all",
 
-    // Controla si el editor debe representar caracteres de control
-    "editor.renderControlCharacters": true,
+  // Controla si el editor debe representar caracteres de control
+  "editor.renderControlCharacters": true,
 
-    // Controla si el editor debe representar guías de sangría.
-    "editor.renderIndentGuides": true,
+  // Controla si el editor debe representar guías de sangría.
+  "editor.renderIndentGuides": true,
 
-    // Controls if the editor should allow to move selections via drag and drop.
-    "editor.dragAndDrop": true,
+  // Controls if the editor should allow to move selections via drag and drop.
+  "editor.dragAndDrop": true,
 
 // Ventana
 
@@ -56,148 +56,157 @@
 
 // Git
 
-    // Ruta del Git ejecutable
-    "git.path": "/usr/bin/git",
+  // Ruta del Git ejecutable
+  "git.path": "/usr/bin/git",
 
-    // Si la búsqueda automática está habilitada.
-    "git.autofetch": false,
+  // Si la búsqueda automática está habilitada.
+  "git.autofetch": false,
 
-    // Confirmar antes de sincronizar repositorios GIT.
-    "git.confirmSync": true,
+  // Confirmar antes de sincronizar repositorios GIT.
+  "git.confirmSync": true,
 
 // CSS
 
-    // Do not use duplicate style definitions
-    "css.lint.duplicateProperties": "warning",
+  // Do not use duplicate style definitions
+  "css.lint.duplicateProperties": "warning",
 
-    // Import statements do not load in parallel
-    "css.lint.importStatement": "warning",
+  // Import statements do not load in parallel
+  "css.lint.importStatement": "warning",
 
-    // Do not use width or height when using padding or border
-    "css.lint.boxModel": "warning",
+  // Do not use width or height when using padding or border
+  "css.lint.boxModel": "warning",
 
-    // The universal selector (*) is known to be slow
-    "css.lint.universalSelector": "warning",
+  // The universal selector (*) is known to be slow
+  "css.lint.universalSelector": "warning",
 
-    // No unit for zero needed
-    "css.lint.zeroUnits": "warning",
+  // No unit for zero needed
+  "css.lint.zeroUnits": "warning",
 
-    // Unknown vendor specific property.
-    "css.lint.unknownVendorSpecificProperties": "warning",
+  // Unknown vendor specific property.
+  "css.lint.unknownVendorSpecificProperties": "warning",
 
-    // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
-    "css.lint.important": "warning",
+  // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+  "css.lint.important": "warning",
 
-    // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
-    "css.lint.float": "warning",
+  // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+  "css.lint.float": "warning",
 
-    // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
-    "css.lint.idSelector": "warning",
+  // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+  "css.lint.idSelector": "warning",
 
 // SCSS (Sass)
 
-    // Do not use duplicate style definitions
-    "scss.lint.duplicateProperties": "warning",
+  // Do not use duplicate style definitions
+  "scss.lint.duplicateProperties": "warning",
 
-    // Import statements do not load in parallel
-    "scss.lint.importStatement": "warning",
+  // Import statements do not load in parallel
+  "scss.lint.importStatement": "warning",
 
-    // Do not use width or height when using padding or border
-    "scss.lint.boxModel": "warning",
+  // Do not use width or height when using padding or border
+  "scss.lint.boxModel": "warning",
 
-    // The universal selector (*) is known to be slow
-    "scss.lint.universalSelector": "warning",
+  // The universal selector (*) is known to be slow
+  "scss.lint.universalSelector": "warning",
 
-    // No unit for zero needed
-    "scss.lint.zeroUnits": "warning",
+  // No unit for zero needed
+  "scss.lint.zeroUnits": "warning",
 
-    // Unknown vendor specific property.
-    "scss.lint.unknownVendorSpecificProperties": "warning",
+  // Unknown vendor specific property.
+  "scss.lint.unknownVendorSpecificProperties": "warning",
 
-    // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
-    "scss.lint.important": "warning",
+  // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+  "scss.lint.important": "warning",
 
-    // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
-    "scss.lint.float": "warning",
+  // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+  "scss.lint.float": "warning",
 
-    // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
-    "scss.lint.idSelector": "warning",
+  // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+  "scss.lint.idSelector": "warning",
 
 // LESS
 
-    // Do not use duplicate style definitions
-    "less.lint.duplicateProperties": "warning",
+  // Do not use duplicate style definitions
+  "less.lint.duplicateProperties": "warning",
 
-    // Import statements do not load in parallel
-    "less.lint.importStatement": "warning",
+  // Import statements do not load in parallel
+  "less.lint.importStatement": "warning",
 
-    // Do not use width or height when using padding or border
-    "less.lint.boxModel": "warning",
+  // Do not use width or height when using padding or border
+  "less.lint.boxModel": "warning",
 
-    // The universal selector (*) is known to be slow
-    "less.lint.universalSelector": "warning",
+  // The universal selector (*) is known to be slow
+  "less.lint.universalSelector": "warning",
 
-    // No unit for zero needed
-    "less.lint.zeroUnits": "warning",
+  // No unit for zero needed
+  "less.lint.zeroUnits": "warning",
 
-    // Unknown vendor specific property.
-    "less.lint.unknownVendorSpecificProperties": "warning",
+  // Unknown vendor specific property.
+  "less.lint.unknownVendorSpecificProperties": "warning",
 
-    // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
-    "less.lint.important": "warning",
+  // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+  "less.lint.important": "warning",
 
-    // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
-    "less.lint.float": "warning",
+  // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+  "less.lint.float": "warning",
 
-    // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
-    "less.lint.idSelector": "warning",
+  // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+  "less.lint.idSelector": "warning",
+
+// Depurar
+
+  // Mostrar valores de variable en línea en el editor durante la depuración
+  "debug.inlineValues": true,
 
 // HTML
 
-    // Indent <head> and <body> sections.
-    "html.format.indentInnerHtml": true,
+  // Indent <head> and <body> sections.
+  "html.format.indentInnerHtml": true,
 
-    // Format and indent {{#foo}} and {{/foo}}.
-    "html.format.indentHandlebars": true,
+  // Format and indent {{#foo}} and {{/foo}}.
+  "html.format.indentHandlebars": true,
 
-    // Configures if the built-in HTML language support suggests Angular V1 tags and properties.
-    "html.suggest.angular1": false,
+  // Configures if the built-in HTML language support suggests Angular V1 tags and properties.
+  "html.suggest.angular1": false,
 
-    // Configures if the built-in HTML language support suggests Ionic tags, properties and values.
-    "html.suggest.ionic": false,
+  // Configures if the built-in HTML language support suggests Ionic tags, properties and values.
+  "html.suggest.ionic": false,
 
-// Markdown
+// La configuración predeterminada se reemplaza
 
-    "[markdown]": {
-        "editor.wordWrap": "wordWrapColumn"
-    },
+  // Establecer los valores de configuración que se reemplazarán para el lenguaje [markdown].
+  "[markdown]": {
+      "editor.wordWrap": "wordWrapColumn"
+  },
 
 // PHP
 
-    // Indica si la validación de PHP está habilitada o no.
-    "php.validate.enable": false,
+  // Indica si la validación de PHP está habilitada o no.
+  "php.validate.enable": false,
 
-    // Señala al ejecutable PHP.
-    "php.validate.executablePath": null,
+  // Señala al ejecutable PHP.
+  "php.validate.executablePath": null,
 
 // Terminal externo
 
-    // Personaliza qué terminal debe ejecutarse en Linux.
-    "terminal.external.linuxExec": "sakura",
+  // Personaliza qué terminal debe ejecutarse en Linux.
+  "terminal.external.linuxExec": "urxvtc",
 
 // Telemetría
 
-    // Habilite los datos de uso y los errores para enviarlos a Microsoft.
-    "telemetry.enableTelemetry": false,
+  // Habilite los datos de uso y los errores para enviarlos a Microsoft.
+  "telemetry.enableTelemetry": false,
 
-    // Habilite los informes de bloqueo para enviarlos a Microsoft.
-	// Esta opción requiere que se reinicie para surtir efecto.
-    "telemetry.enableCrashReporter": false,
+  // Habilite los informes de bloqueo para enviarlos a Microsoft.
+  // Esta opción requiere que se reinicie para surtir efecto.
+  "telemetry.enableCrashReporter": false,
 
 // Terminal integrado
 
   // Controla si las ligaduras tipográficas están habilitadas en el terminal.
   "terminal.integrated.fontLigatures": true,
+
+  // Controla si las variables de configuración regional se definen al inicio del terminal. El valor predeterminado es true en OS X y false en las demás plataformas.
+  "terminal.integrated.setLocaleVariables": true,
 
 // puglint configuration options
 
@@ -228,19 +237,19 @@
   "python.linting.outputWindow": "Python",
 
   // Provider for formatting. Possible options include 'autopep8' and 'yapf'.
-  "python.formatting.provider": "autopep8",
+  "python.formatting.provider": "yapf",
 
-  // Path to autopep8, you can use a custom version of autopep8 by modifying this setting to include the full path.
-  "python.formatting.autopep8Path": "autopep8",
+  // Path to yapf, you can use a custom version of yapf by modifying this setting to include the full path.
+  "python.formatting.yapfPath": "yapf",
 
   // Arguments passed in. Each argument is a separate item in the array.
-  "python.formatting.autopep8Args": [],
+  "python.formatting.yapfArgs": [],
 
   // Format the document upon saving.
   "python.formatting.formatOnSave": false,
 
   // List of paths to libraries and the like that need to be imported by auto complete engine. E.g. when using Google App SDK, the paths are not in system path, hence need to be added into this list.
-  "python.autoComplete.extraPaths": ["/home/soulchainer/github/qtile/libqtile"],
+  "python.autoComplete.extraPaths": ["/home/soulchainer/Desarrollo/qtile/libqtile"],
 
   // Whether to enable or disable unit testing using pytest.
   "python.unitTest.pyTestEnabled": true,
@@ -255,6 +264,6 @@
   "python.terminal.launchArgs": [],
   "workbench.welcome.enabled": true,
   "workbench.colorTheme": "Monokai",
-"workbench.iconTheme": "vscode-icons",
-"window.zoomLevel": 0
+  "workbench.iconTheme": "vscode-icons",
+  "window.zoomLevel": 0
 }

@@ -1,0 +1,6 @@
+Code/.config/Code
+!Code/.config/Code/User/snippets
+!Code/.config/Code/User/(keybindings|settings).json
+cmus/.config/cmus
+!cmus/.config/cmus/*.(theme|sh)
+qtile/.config/qtile/**/__pycache__/

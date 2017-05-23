@@ -24,9 +24,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.command import lazy
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
+import os
+import subprocess
 
 mod = "mod4"
 alt = "mod1"
@@ -96,9 +98,10 @@ keys = [
     Key([mod], "q", lazy.spawn("xkill")),
     Key([mod], "v", lazy.spawn("vlc")),
     Key([mod], "g", lazy.spawn("gimp")),
-    Key([mod], "i", lazy.spawn("rambox")),
+    Key([mod], "i", lazy.spawn("qupzilla")),
     Key([mod], "c", lazy.spawn("urxvtc -e cmus")),
-    Key(["control", alt], "f", lazy.spawn("firefox-aurora")),
+    Key(["control", alt], "a", lazy.spawn("firefox-aurora")),
+    Key(["control", alt], "f", lazy.spawn("firefox")),
     Key(["control", alt], "c", lazy.spawn("chromium")),
     Key(["control", alt], "v", lazy.spawn("vivaldi-stable")),
     Key(["control", alt], "space", lazy.spawn("lxtask")),
@@ -116,7 +119,7 @@ keys = [
 # My groups (workspaces) "im", "w", "d", "d2", "img", "mm", "vm"
 groups = [
     Group("im",
-          matches=[Match(wm_class=["Rambox"]),
+          matches=[Match(wm_class=["QupZilla"]),
                    Match(wm_class=["Hexchat"])]),
     Group("w",
           matches=[Match(wm_class=["Firefox"]),
@@ -209,3 +212,9 @@ auto_fullscreen = True
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
+
