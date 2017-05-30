@@ -34,6 +34,8 @@ eval "$(ssh-agent -s)"
 # Añadir la configuración de URxvt
 xrdb -merge ~/.Xresources
 numlockx &
+# Cargar la distro de teclado personalizada, "es"" con variante soul_custom_kbd
+setxkbmap -variant soul_custom_kbd
 # volumeicon &
 urxvtd -q -o -f &
 redshift -l 37.94008:-1.144509 -t 5500K:3400K &
