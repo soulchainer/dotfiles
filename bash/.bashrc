@@ -11,6 +11,9 @@ fi
 
 ### EXPORTS
 
+# For Visual Studio Code for proper rendering when using diff-so-fancy
+export LC_ALL=es_ES.UTF-8
+
 ## GO
 GOPATH="$HOME/Dev/go"
 

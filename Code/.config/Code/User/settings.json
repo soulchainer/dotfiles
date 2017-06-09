@@ -21,6 +21,9 @@
   // Controla si el editor se seguirá desplazando después de la última línea
   "editor.scrollBeyondLastLine": false,
 
+  // Controls if the minimap is shown
+  "editor.minimap.enabled": false,
+
   // Controla si las líneas deben ajustarse. Las líneas se ajustarán en min(editor.wrappingColumn, viewportWidthInColumns).
   "editor.wordWrap": "wordWrapColumn",
 
