@@ -200,7 +200,8 @@ main = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=None, **border)
+FLOAT_RULES = [dict(wmclass="gcolor3")]
+floating_layout = layout.Floating(float_rules=FLOAT_RULES, **border)
 auto_fullscreen = True
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
