@@ -4,3 +4,4 @@ Code/.config/Code
 cmus/.config/cmus
 !cmus/.config/cmus/*.(theme|sh)
 qtile/.config/qtile/**/__pycache__/
+exes/src
