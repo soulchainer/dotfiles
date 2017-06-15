@@ -100,7 +100,7 @@ keys = [
     Key([mod], "g", lazy.spawn("gimp")),
     Key([mod], "i", lazy.spawn("qupzilla")),
     Key([mod], "c", lazy.spawn("urxvtc -e cmus")),
-    Key(["control", alt], "a", lazy.spawn("firefox-aurora")),
+    Key(["control", alt], "d", lazy.spawn("firefox-developer")),
     Key(["control", alt], "f", lazy.spawn("firefox")),
     Key(["control", alt], "c", lazy.spawn("chromium")),
     Key(["control", alt], "v", lazy.spawn("vivaldi-stable")),
