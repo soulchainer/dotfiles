@@ -119,7 +119,7 @@ keys = [
 # My groups (workspaces) "im", "w", "d", "d2", "img", "mm", "vm"
 groups = [
     Group("im",
-          matches=[Match(wm_class=["QupZilla"]),
+          matches=[Match(wm_class=["ImOnFire"]),
                    Match(wm_class=["Hexchat"])]),
     Group("w",
           matches=[Match(wm_class=["Firefox"]),

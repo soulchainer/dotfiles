@@ -1,3 +1,3 @@
 #!/bin/bash
-qupzilla &
-firefox-aurora &
+firefox --class=ImOnFire &
+firefox-developer &
