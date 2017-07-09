@@ -120,7 +120,8 @@ keys = [
 groups = [
     Group("im",
           matches=[Match(wm_class=["ImOnFire"]),
-                   Match(wm_class=["Hexchat"])]),
+                   Match(wm_class=["Hexchat"]),
+                   Match(wm_class=["skypeforlinux"])]),
     Group("w",
           matches=[Match(wm_class=["Firefox"]),
                    Match(wm_class=["Chromium"])]),
