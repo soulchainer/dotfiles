@@ -106,6 +106,7 @@ keys = [
     Key(["control", alt], "c", lazy.spawn("chromium")),
     Key(["control", alt], "v", lazy.spawn("vivaldi-stable")),
     Key(["control", alt], "space", lazy.spawn("lxtask")),
+    Key(["control", "shift"], "c", lazy.spawn("code")),
     Key([], "Print", lazy.spawn("scrot")),
     # cmus control
     Key(["control", alt], "ntilde", lazy.spawn("cmus-remote -u")),
