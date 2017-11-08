@@ -194,6 +194,11 @@
   // Personaliza qué terminal debe ejecutarse en Linux.
   "terminal.external.linuxExec": "urxvtc",
 
+// Terminal integrado
+
+  // Controla la familia de fuentes del terminal, que está establecida de manera predeterminada en el valor de editor.fontFamily.
+  "terminal.integrated.fontFamily": "'Fira Code'",
+
 // Telemetría
 
   // Habilite los datos de uso y los errores para enviarlos a Microsoft.
@@ -204,6 +209,9 @@
   "telemetry.enableCrashReporter": false,
 
 // Terminal integrado
+
+  // Controla el tamaño de la fuente en píxeles del terminal.
+  "terminal.integrated.fontSize": 16,
 
   // Controla si las ligaduras tipográficas están habilitadas en el terminal.
   "terminal.integrated.fontLigatures": true,
@@ -265,7 +273,6 @@
 
   // Python launch arguments to use when executing a file in the terminal.
   "python.terminal.launchArgs": [],
-  "workbench.welcome.enabled": true,
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "vscode-icons",
   "window.zoomLevel": 0
