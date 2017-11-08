@@ -14,6 +14,7 @@ alias free='free -m'      # show sizes in MB
 
 alias np='nano PKGBUILD'
 alias vim='nvim'
+alias git='LANGUAGE=en_US.UTF-8 git' # set git on english in terminal
 
 ## APACHE
 alias apache='sudo systemctl start httpd.service'
