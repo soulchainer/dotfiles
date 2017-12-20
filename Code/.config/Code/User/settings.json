@@ -48,6 +48,11 @@
   // Controls if the editor should allow to move selections via drag and drop.
   "editor.dragAndDrop": true,
 
+// Área de trabajo
+
+  // Controla la posición de los botones de cierre de pestañas del editor o los deshabilita si se establece en "off".
+  "workbench.editor.tabCloseButton": "off",
+
 // Ventana
 
   // Controla si las carpetas deben abrirse en una ventana nueva o reemplazar la última ventana activa.
@@ -56,6 +61,13 @@
   // - off: las carpetas reemplazarán la última ventana activa
   // Tenga en cuenta que aún puede haber casos en los que este parámetro se ignore (por ejemplo, al usar la opción de la línea de comandos -new-window o -reuse-window).
   "window.openFoldersInNewWindow": "on",
+  // Controla la visibilidad de la barra de menús. El valor "alternar" significa que la barra de menús está oculta y que se mostrará al presionar una sola vez la tecla Alt. La barra de menús estará visible de forma predeterminada, a menos que se use el modo de pantalla completa para la ventana.
+  "window.menuBarVisibility": "toggle",
+
+// Depurar
+
+  // Mostrar valores de variable en línea en el editor durante la depuración
+  "debug.inlineValues": true,
 
 // Git
 
