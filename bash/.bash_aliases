@@ -16,6 +16,8 @@ alias np='nano PKGBUILD'
 alias vim='nvim'
 alias git='LANGUAGE=en_US.UTF-8 git' # set git on english in terminal
 
+## NODE
+alias npm='/usr/bin/npm'
 ## APACHE
 alias apache='sudo systemctl start httpd.service'
 alias apaches='sudo systemctl stop httpd.service'

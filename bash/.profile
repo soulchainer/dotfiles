@@ -15,7 +15,10 @@ PATH="$HOME/.cargo/bin:$PATH"
 # YARN (to have access to Yarn’s executables globally)
 PATH="$PATH:`yarn global bin`"
 
-EDITOR="vim"
+## EDITORS
+
+EDITOR="nvim"
+VISUAL="nvim"
 
 ############### NON GUI PROGRAMS AT LOGIN ###############s
 

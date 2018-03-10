@@ -11,7 +11,7 @@ fi
 
 ### EXPORTS
 
-# For Visual Studio Code for proper rendering when using diff-so-fancy
+# For Visual Studio Code
 export LC_ALL=es_ES.UTF-8
 export REACT_EDITOR=code
 
@@ -47,7 +47,7 @@ GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
 # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
 # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
 
-# GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
 # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 
