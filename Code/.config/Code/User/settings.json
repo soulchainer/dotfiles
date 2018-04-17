@@ -12,6 +12,9 @@
   // Columnas en las que mostrar reglas verticales
   "editor.rulers": [80],
 
+  // Al abrir un archivo, se detectarán `editor.tabSize` y `editor.insertSpaces` en función del contenido del archivo.
+  "editor.detectIndentation": false,
+
   // El número de espacios a los que equivale una tabulación. Este valor se invalida según el contenido del archivo cuando `editor.detectIndentation` está activado.
   "editor.tabSize": 2,
 
@@ -167,11 +170,6 @@
   // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
   "less.lint.idSelector": "warning",
 
-// Depurar
-
-  // Mostrar valores de variable en línea en el editor durante la depuración
-  "debug.inlineValues": true,
-
 // HTML
 
   // Indent <head> and <body> sections.
@@ -191,6 +189,16 @@
   // Establecer los valores de configuración que se reemplazarán para el lenguaje [markdown].
   "[markdown]": {
       "editor.wordWrap": "wordWrapColumn"
+  },
+
+  // Establecer los valores de configuración que se reemplazarán para el lenguaje [python].
+  "[python]": {
+    "editor.tabSize": 4,
+  },
+
+  // Establecer los valores de configuración que se reemplazarán para el lenguaje [rust].
+  "[rust]": {
+    "editor.tabSize": 4,
   },
 
 // PHP
@@ -225,9 +233,6 @@
   // Controla el tamaño de la fuente en píxeles del terminal.
   "terminal.integrated.fontSize": 16,
 
-  // Controla si las ligaduras tipográficas están habilitadas en el terminal.
-  "terminal.integrated.fontLigatures": true,
-
   // Controla si las variables de configuración regional se definen al inicio del terminal. El valor predeterminado es true en OS X y false en las demás plataformas.
   "terminal.integrated.setLocaleVariables": true,
 
@@ -256,9 +261,6 @@
   // Arguments passed in. Each argument is a separate item in the array.
   "python.linting.flake8Args": [],
 
-  // The output window name for the linting messages, defaults to Python output window.
-  "python.linting.outputWindow": "Python",
-
   // Provider for formatting. Possible options include 'autopep8' and 'yapf'.
   "python.formatting.provider": "yapf",
 
@@ -267,9 +269,6 @@
 
   // Arguments passed in. Each argument is a separate item in the array.
   "python.formatting.yapfArgs": [],
-
-  // Format the document upon saving.
-  "python.formatting.formatOnSave": false,
 
   // List of paths to libraries and the like that need to be imported by auto complete engine. E.g. when using Google App SDK, the paths are not in system path, hence need to be added into this list.
   "python.autoComplete.extraPaths": ["/home/soulchainer/Desarrollo/qtile/libqtile"],
@@ -287,5 +286,16 @@
   "python.terminal.launchArgs": [],
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "vscode-icons",
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "gitlens.keymap": "chorded",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  }
 }

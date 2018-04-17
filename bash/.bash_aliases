@@ -10,6 +10,7 @@ alias cpch="cp -Ru"       # copy files only if changed, for projects
 alias diff="diff --color" # colorize diff
 
 alias df='df -h'          # human-readable sizes
+alias du='du -h'          # human-readable sizes
 alias free='free -m'      # show sizes in MB
 
 alias np='nano PKGBUILD'

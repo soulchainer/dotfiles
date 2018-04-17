@@ -27,5 +27,9 @@
     "key": "shift+tab",
     "command": "-outdent",
     "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+},
+{
+  "key": "alt+w",
+  "command": "editor.emmet.action.wrapWithAbbreviation"
 }
 ]
