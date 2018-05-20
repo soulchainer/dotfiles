@@ -6,3 +6,4 @@ cmus/.config/cmus
 qtile/.config/qtile/**/__pycache__/
 exes/src
 .vscode
+.pytest_cache
