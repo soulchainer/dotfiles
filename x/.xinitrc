@@ -46,8 +46,8 @@ export `gnome-keyring-daemon –start`
 # compton --opengl --vsync opengl-swc --paint-on-overlay -b &
 compton --opengl --paint-on-overlay -b &
 ## Optionally enable file manager in daemon mode for automounting
-#(sleep 1s && thunar --daemon) &
-(sleep 1s && pcmanfm --daemon-mode) &
+(sleep 1s && thunar --daemon) &
+#(sleep 1s && pcmanfm --daemon-mode) &
 # Abrir el nitrogen, para establecer el fondo
 (sleep 1s && nitrogen --restore) &
 

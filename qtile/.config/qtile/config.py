@@ -92,7 +92,7 @@ keys = [
 
     # APP KEYBINDINGS
     Key([mod], "Return", lazy.spawn("urxvtc")),
-    Key([mod], "f", lazy.spawn("pcmanfm")),
+    Key([mod], "f", lazy.spawn("thunar")),
     Key([mod], "e", lazy.spawn("pluma")),
     Key([mod], "z", lazy.spawn("zeal")),
     Key([mod], "q", lazy.spawn("xkill")),
