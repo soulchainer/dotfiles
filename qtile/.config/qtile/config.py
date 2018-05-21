@@ -65,7 +65,6 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "space", lazy.next_layout()),
     Key([alt], "q", lazy.window.kill()),
-
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
 
@@ -73,11 +72,15 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.disable_floating()),
 
     # Increase space for windows
-    Key([mod], "l",
+    Key(
+        [mod],
+        "l",
         lazy.layout.delete(),  # Stack, borra pilas adicionales (columnas)
         lazy.layout.grow()),  # MonadTall, aumenta tamaño de ventana principal
     # Decrease space for windows
-    Key([mod], "h",
+    Key(
+        [mod],
+        "h",
         lazy.layout.add(),  # Stack, añade pilas adicionales (columnas)
         lazy.layout.shrink()),  # MonadTall, encoge la ventana principal
 
@@ -98,10 +101,9 @@ keys = [
     Key([mod], "q", lazy.spawn("xkill")),
     Key([mod], "v", lazy.spawn("vlc")),
     Key([mod], "g", lazy.spawn("gimp")),
-    Key([mod], "i", lazy.spawn("firefox --class=ImOnFire")),
     Key([mod], "c", lazy.spawn("urxvtc -e cmus")),
     Key([mod, "control"], "c", lazy.spawn("code")),
-    Key(["control", alt], "d", lazy.spawn("firefox-developer")),
+    Key(["control", alt], "d", lazy.spawn("firefox-developer-edition")),
     Key(["control", alt], "f", lazy.spawn("firefox")),
     Key(["control", alt], "c", lazy.spawn("chromium")),
     Key(["control", alt], "v", lazy.spawn("vivaldi-stable")),
@@ -120,41 +122,50 @@ keys = [
 
 # My groups (workspaces) "im", "w", "d", "d2", "img", "mm", "vm"
 groups = [
-    Group("im",
-          matches=[Match(wm_class=["Firefox"]),
-                   Match(wm_class=["Hexchat"]),
-                   Match(wm_class=["skypeforlinux"])]),
-    Group("w",
-          matches=[Match(wm_class=["Firefox Developer Edition"]),
-                   Match(wm_class=["Chromium"])]),
-    Group("d",
-          matches=[Match(wm_class=["Atom"]),
-                   Match(wm_class=["Code"]),
-                   Match(wm_class=["Subl3"]),
-                   Match(wm_class=["Geany"])]),
-    Group("d2",
-          matches=[Match(wm_class=["Zeal"])]),
-    Group("img",
-          matches=[Match(wm_class=["Gimp"]),
-                   Match(wm_class=["Darktable"]),
-                   Match(wm_class=["Inkscape"]),
-                   Match(wm_class=["Simple-scan"]),
-                   Match(wm_class=["Nitrogen"])]),
-    Group("mm",
-          matches=[Match(wm_class=["mpv"]),
-                   Match(wm_class=["Audacious"]),
-                   Match(title=["cmus"]),
-                   Match(wm_class=["Vlc"])]),
-    Group("vm",
-          matches=[Match(wm_class=["Virtualbox"])]),
+    Group(
+        "im",
+        matches=[
+            Match(wm_class=["Firefox"]),
+            Match(wm_class=["Hexchat"]),
+            Match(wm_class=["skypeforlinux"])
+        ]),
+    Group(
+        "w",
+        matches=[
+            Match(wm_class=["Firefox Developer Edition"]),
+            Match(wm_class=["Chromium"])
+        ]),
+    Group(
+        "d",
+        matches=[
+            Match(wm_class=["Atom"]),
+            Match(wm_class=["Code"]),
+            Match(wm_class=["Subl3"]),
+            Match(wm_class=["Geany"])
+        ]),
+    Group("d2", matches=[Match(wm_class=["Zeal"])]),
+    Group(
+        "img",
+        matches=[
+            Match(wm_class=["Gimp"]),
+            Match(wm_class=["Darktable"]),
+            Match(wm_class=["Inkscape"]),
+            Match(wm_class=["Simple-scan"]),
+            Match(wm_class=["Nitrogen"])
+        ]),
+    Group(
+        "mm",
+        matches=[
+            Match(wm_class=["mpv"]),
+            Match(wm_class=["Audacious"]),
+            Match(title=["cmus"]),
+            Match(wm_class=["Vlc"])
+        ]),
+    Group("vm", matches=[Match(wm_class=["Virtualbox"])]),
 ]
 
 # Layouts configuration
-border = dict(
-    border_focus='#8FC971',
-    border_normal='#CDCDCD',
-    border_width=4
-)
+border = dict(border_focus='#8FC971', border_normal='#CDCDCD', border_width=4)
 layouts = [
     layout.Max(),
     layout.MonadTall(**border),
@@ -180,20 +191,30 @@ screens = [
                 # shows current layout name
                 widget.CurrentLayout(),
                 widget.Systray(),
+                widget.Battery(
+                    charge_char='↑',
+                    foreground='09c25a',
+                    discharge_chart='↓',
+                    update_delay='300'),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p')
             ],
             25,  # bar height
             background=["#000000", "#232323"],  # bar with gradient background
-        ),
-    ),
+        ), ),
 ]
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
+    Drag(
+        [mod],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position()),
+    Drag(
+        [mod],
+        "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
@@ -217,8 +238,8 @@ auto_fullscreen = True
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
+
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
-
