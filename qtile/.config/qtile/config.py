@@ -195,7 +195,8 @@ screens = [
                     charge_char='↑',
                     foreground='09c25a',
                     discharge_chart='↓',
-                    update_delay='300'),
+                    update_delay=300
+                ),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p')
             ],
             25,  # bar height
