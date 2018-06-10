@@ -102,11 +102,9 @@ keys = [
     Key([mod], "v", lazy.spawn("vlc")),
     Key([mod], "g", lazy.spawn("gimp")),
     Key([mod], "c", lazy.spawn("urxvtc -e cmus")),
-    Key([mod, "control"], "c", lazy.spawn("code")),
     Key(["control", alt], "d", lazy.spawn("firefox-developer-edition")),
     Key(["control", alt], "f", lazy.spawn("firefox")),
     Key(["control", alt], "c", lazy.spawn("chromium")),
-    Key(["control", alt], "v", lazy.spawn("vivaldi-stable")),
     Key(["control", alt], "space", lazy.spawn("lxtask")),
     Key(["control", "shift"], "c", lazy.spawn("code")),
     Key([], "Print", lazy.spawn("scrot")),
@@ -135,14 +133,8 @@ groups = [
             Match(wm_class=["Firefox Developer Edition"]),
             Match(wm_class=["Chromium"])
         ]),
-    Group(
-        "d",
-        matches=[
-            Match(wm_class=["Atom"]),
-            Match(wm_class=["Code"]),
-            Match(wm_class=["Subl3"]),
-            Match(wm_class=["Geany"])
-        ]),
+    Group("d", matches=[Match(wm_class=["Atom"]),
+                        Match(wm_class=["Code"])]),
     Group("d2", matches=[Match(wm_class=["Zeal"])]),
     Group(
         "img",
@@ -195,8 +187,7 @@ screens = [
                     charge_char='↑',
                     foreground='09c25a',
                     discharge_chart='↓',
-                    update_delay=300
-                ),
+                    update_delay=300),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p')
             ],
             25,  # bar height
