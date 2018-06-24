@@ -208,7 +208,7 @@
 
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "vscode-icons",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "gitlens.keymap": "chorded",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
