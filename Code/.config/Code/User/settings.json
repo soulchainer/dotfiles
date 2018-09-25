@@ -1,16 +1,14 @@
 // Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
 {
-// Editor
+  // Editor
   // Controla la familia de fuentes.
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
   // Controla el tamaño de fuente en píxeles.
   "editor.fontSize": 15,
   // Columnas en las que mostrar reglas verticales
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   // Al abrir un archivo, se detectarán `editor.tabSize` y `editor.insertSpaces` en función del contenido del archivo.
-  "editor.detectIndentation": false,
+  "editor.detectIndentation": true,
   // El número de espacios a los que equivale una tabulación. Este valor se invalida según el contenido del archivo cuando `editor.detectIndentation` está activado.
   "editor.tabSize": 2,
   // Controla si las selecciones tienen esquinas redondeadas
@@ -36,11 +34,11 @@
   // Controls if the editor should allow to move selections via drag and drop.
   "editor.dragAndDrop": true,
 
-// Área de trabajo
+  // Área de trabajo
   // Controla la posición de los botones de cierre de pestañas del editor o los deshabilita si se establece en "off".
   "workbench.editor.tabCloseButton": "off",
 
-// Ventana
+  // Ventana
   // Controla si las carpetas deben abrirse en una ventana nueva o reemplazar la última ventana activa.
   // - default: las carpetas se abrirán en una ventana nueva, a menos que se seleccione una carpeta desde la aplicación (por ejemplo, desde el menú Archivo)
   // - on: las carpetas se abrirán en una ventana nueva
@@ -50,11 +48,11 @@
   // Controla la visibilidad de la barra de menús. El valor "alternar" significa que la barra de menús está oculta y que se mostrará al presionar una sola vez la tecla Alt. La barra de menús estará visible de forma predeterminada, a menos que se use el modo de pantalla completa para la ventana.
   "window.menuBarVisibility": "toggle",
 
-// Depurar
+  // Depurar
   // Mostrar valores de variable en línea en el editor durante la depuración
   "debug.inlineValues": true,
 
-// Git
+  // Git
   // Ruta del Git ejecutable
   "git.path": "/usr/bin/git",
   // Si la búsqueda automática está habilitada.
@@ -62,7 +60,7 @@
   // Confirmar antes de sincronizar repositorios GIT.
   "git.confirmSync": true,
 
-// CSS
+  // CSS
   // Do not use duplicate style definitions
   "css.lint.duplicateProperties": "warning",
   // Import statements do not load in parallel
@@ -82,7 +80,7 @@
   // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
   "css.lint.idSelector": "warning",
 
-// SCSS (Sass)
+  // SCSS (Sass)
   // Do not use duplicate style definitions
   "scss.lint.duplicateProperties": "warning",
   // Import statements do not load in parallel
@@ -102,7 +100,7 @@
   // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
   "scss.lint.idSelector": "warning",
 
-// LESS
+  // LESS
   // Do not use duplicate style definitions
   "less.lint.duplicateProperties": "warning",
   // Import statements do not load in parallel
@@ -122,7 +120,7 @@
   // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
   "less.lint.idSelector": "warning",
 
-// HTML
+  // HTML
   // Indent <head> and <body> sections.
   "html.format.indentInnerHtml": true,
   // Format and indent {{#foo}} and {{/foo}}.
@@ -132,37 +130,36 @@
   // Configures if the built-in HTML language support suggests Ionic tags, properties and values.
   "html.suggest.ionic": false,
 
-// La configuración predeterminada se reemplaza
+  // La configuración predeterminada se reemplaza
   // Establecer los valores de configuración que se reemplazarán para el lenguaje [markdown].
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn"
   },
   // Establecer los valores de configuración que se reemplazarán para el lenguaje [python].
   "[python]": {
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
   // Establecer los valores de configuración que se reemplazarán para el lenguaje [rust].
   "[rust]": {
     "editor.tabSize": 4,
+    "editor.formatOnSave": false
   },
 
-// Prettier
+  // Prettier
   // A list of languages IDs to disable this extension on
-  "prettier.disableLanguages": [
-    "markdown"
-  ],
+  "prettier.disableLanguages": ["markdown", "rust"],
 
-// PHP
+  // PHP
   // Indica si la validación de PHP está habilitada o no.
   "php.validate.enable": false,
   // Señala al ejecutable PHP.
   "php.validate.executablePath": null,
 
-// Terminal externo
+  // Terminal externo
   // Personaliza qué terminal debe ejecutarse en Linux.
   "terminal.external.linuxExec": "urxvtc",
 
-// Terminal integrado
+  // Terminal integrado
   // Controla la familia de fuentes del terminal, que está establecida de manera predeterminada en el valor de editor.fontFamily.
   "terminal.integrated.fontFamily": "'Fira Code'",
   // Controla el tamaño de la fuente en píxeles del terminal.
@@ -170,11 +167,11 @@
   // Controla si las variables de configuración regional se definen al inicio del terminal. El valor predeterminado es true en OS X y false en las demás plataformas.
   "terminal.integrated.setLocaleVariables": true,
 
-// puglint configuration options
+  // puglint configuration options
   // Control whether pug-lint is enabled for Pug/Jade files or not.
   "puglint.enable": true,
 
-// Python Configuration
+  // Python Configuration
   // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
   "python.pythonPath": "/usr/bin/python",
   // Whether to lint Python files.
@@ -208,7 +205,7 @@
 
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "vscode-icons",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "gitlens.keymap": "chorded",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -223,8 +220,22 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
 
-// Emmet
-  // Cuando se habilita, se expande la abreviación Emmet al presionar la tecla TAB. 
+  // Emmet
+  // Cuando se habilita, se expande la abreviación Emmet al presionar la tecla TAB.
   "emmet.triggerExpansionOnTab": true,
   "gitlens.historyExplorer.enabled": true,
+
+  // Rust
+  // Path to rustup executable
+  "rust-client.rustupPath": "/home/soulchainer/.cargo/bin/rustup",
+  // Update the RLS whenever the extension starts up.
+  "rust-client.updateOnStartup": true,
+  // Enable all Cargo features.
+  "rust.all_features": true,
+  "rust.clippy_preference": "on",
+  // When specified, RLS will use the Rustfmt pointed at the path instead of the bundled one
+  "rust.rustfmt_path": "/home/soulchainer/.cargo/bin/rustfmt",
+  // Enable unstable features.
+  "rust.unstable_features": true,
+  "editor.formatOnType": false
 }
