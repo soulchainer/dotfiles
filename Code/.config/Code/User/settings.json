@@ -236,6 +236,5 @@
   // When specified, RLS will use the Rustfmt pointed at the path instead of the bundled one
   "rust.rustfmt_path": "/home/soulchainer/.cargo/bin/rustfmt",
   // Enable unstable features.
-  "rust.unstable_features": true,
-  "editor.formatOnType": false
+  "rust.unstable_features": true
 }
