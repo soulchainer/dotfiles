@@ -5,6 +5,7 @@
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
 # Copyright (c) 2013 Tao Sauvage
+# Copyright (c) 2018 Juan Riquelme
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -68,6 +69,9 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
 
+    # Power management
+    Key([mod], "Escape", lazy.spawn("systemctl suspend")),
+
     # Disable floating window
     Key([mod, "shift"], "f", lazy.window.disable_floating()),
 
@@ -75,19 +79,19 @@ keys = [
     Key(
         [mod],
         "l",
-        lazy.layout.delete(),  # Stack, borra pilas adicionales (columnas)
-        lazy.layout.grow()),  # MonadTall, aumenta tamaño de ventana principal
+        lazy.layout.delete(),  # Stack, delete aditional stacks (columns)
+        lazy.layout.grow()),  # MonadTall, increase size of main window
     # Decrease space for windows
     Key(
         [mod],
         "h",
-        lazy.layout.add(),  # Stack, añade pilas adicionales (columnas)
-        lazy.layout.shrink()),  # MonadTall, encoge la ventana principal
+        lazy.layout.add(),  # Stack, add aditional stacks (columns)
+        lazy.layout.shrink()),  # MonadTall, decrease size of main window
 
     # Normalize size of the windows
-    Key([mod], "n", lazy.layout.normalize()),  # MonadTall, normaliza ventanas
+    Key([mod], "n", lazy.layout.normalize()),  # MonadTall
 
-    # Toggle fullscreen mode, pantalla completa/restablecer la ventana enfocada
+    # Toggle fullscreen mode (window with the focus)
     Key([], "F12", lazy.window.toggle_fullscreen()),
 
     # open a prompt for execute a command
@@ -109,13 +113,14 @@ keys = [
     Key(["control", "shift"], "c", lazy.spawn("code")),
     Key([], "Print", lazy.spawn("scrot")),
     # cmus control
-    Key(["control", alt], "ntilde", lazy.spawn("cmus-remote -u")),
-    Key(["control", alt], "p", lazy.spawn("cmus-remote -r")),
-    Key(["control", alt], "n", lazy.spawn("cmus-remote -n")),
+    Key(["control", alt], "ntilde", lazy.spawn("cmus-remote -u")),  # pause
+    Key(["control", alt], "p", lazy.spawn("cmus-remote -r")),  # prev song
+    Key(["control", alt], "n", lazy.spawn("cmus-remote -n")),  # next song
     # audio control
-    Key([mod], "0", lazy.spawn("amixer -q set Master toggle")),
+    Key([mod], "0", lazy.spawn("amixer -q set Master toggle")),  # mute/unmute
+    # vol-
     Key([mod], "minus", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
-    Key([mod], "plus", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))
+    Key([mod], "plus", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))  # vol+
 ]
 
 # My groups (workspaces) "im", "w", "d", "d2", "img", "mm", "vm"
@@ -124,7 +129,6 @@ groups = [
         "im",
         matches=[
             Match(wm_class=["Firefox"]),
-            Match(wm_class=["Hexchat"]),
             Match(wm_class=["skypeforlinux"])
         ]),
     Group(
@@ -171,28 +175,43 @@ widget_defaults = dict(
     padding=3,
 )
 
+
+def get_shared_widget_config():
+    return [
+        widget.GroupBox(),
+        widget.Prompt(),
+        # shows actual group tasklist
+        widget.TaskList(fontsize=14, highlight_method='block'),
+        widget.Cmus(max_chars=50),
+        widget.CapsNumLockIndicator(),
+        widget.HDDBusyGraph(),
+        # shows current layout name
+        widget.CurrentLayout(),
+        widget.Systray(),
+        widget.Battery(
+            charge_char='▲',
+            foreground='09c25a',
+            discharge_chart='▼',
+            update_delay=300),
+        widget.Clock(format='%d-%m-%Y %a %I:%M %p')
+    ]
+
+
 screens = [
     Screen(
         top=bar.Bar(  # bar on top
-            [
-                widget.GroupBox(),
-                widget.Prompt(),
-                # shows actual group tasklist
-                widget.TaskList(fontsize=14, highlight_method='block'),
-                widget.Cmus(max_chars=50),
-                # shows current layout name
-                widget.CurrentLayout(),
-                widget.Systray(),
-                widget.Battery(
-                    charge_char='↑',
-                    foreground='09c25a',
-                    discharge_chart='↓',
-                    update_delay=300),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p')
-            ],
+            get_shared_widget_config(),
             25,  # bar height
             background=["#000000", "#232323"],  # bar with gradient background
-        ), ),
+        ),
+    ),
+    Screen(
+        bottom=bar.Bar(  # bar on bottom
+            get_shared_widget_config(),
+            25,  # bar height
+            background=["#000000", "#232323"],  # bar with gradient background
+        ),
+    ),
 ]
 
 # Drag floating layouts.
@@ -220,15 +239,16 @@ FLOAT_RULES = [dict(wmclass="gcolor3")]
 floating_layout = layout.Floating(float_rules=FLOAT_RULES, **border)
 auto_fullscreen = True
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, github issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
+# For some Java apps to work correctly, Qtile tricks them here into thinking
+# it's a Java application itself (LG3D, a 3D WM which is in their whitelist)
 wmname = "LG3D"
+
+
+# subscribe for screen changes
+# (a screen is added or screen config changes, via xrandr)
+@hook.subscribe.screen_change
+def restart_on_randr(qtile, ev):
+    qtile.cmd_restart()
 
 
 @hook.subscribe.startup_once

@@ -20,5 +20,5 @@ PATH="$PATH:`yarn global bin`"
 EDITOR="nvim"
 VISUAL="nvim"
 
-############### NON GUI PROGRAMS AT LOGIN ###############s
+############### NON GUI PROGRAMS AT LOGIN ###############
 

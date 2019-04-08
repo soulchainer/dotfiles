@@ -63,7 +63,6 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "space", lazy.next_layout()),
     Key([alt], "q", lazy.window.kill()),
-
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
 
@@ -71,11 +70,15 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.disable_floating()),
 
     # Increase space for windows
-    Key([mod], "l",
+    Key(
+        [mod],
+        "l",
         lazy.layout.delete(),  # Stack, borra pilas adicionales (columnas)
         lazy.layout.grow()),  # MonadTall, aumenta tamaño de ventana principal
     # Decrease space for windows
-    Key([mod], "h",
+    Key(
+        [mod],
+        "h",
         lazy.layout.add(),  # Stack, añade pilas adicionales (columnas)
         lazy.layout.shrink()),  # MonadTall, encoge la ventana principal
 
@@ -90,18 +93,18 @@ keys = [
 
     # APP KEYBINDINGS
     Key([mod], "Return", lazy.spawn("urxvtc")),
-    Key([mod], "f", lazy.spawn("pcmanfm")),
-    Key([mod], "e", lazy.spawn("mousepad")),
+    Key([mod], "f", lazy.spawn("thunar")),
+    Key([mod], "e", lazy.spawn("pluma")),
     Key([mod], "z", lazy.spawn("zeal")),
     Key([mod], "q", lazy.spawn("xkill")),
-    Key([mod], "v", lazy.spawn("smplayer")),
+    Key([mod], "v", lazy.spawn("vlc")),
     Key([mod], "g", lazy.spawn("gimp")),
-    Key([mod], "i", lazy.spawn("rambox")),
     Key([mod], "c", lazy.spawn("urxvtc -e cmus")),
-    Key(["control", alt], "f", lazy.spawn("firefox-aurora")),
+    Key(["control", alt], "d", lazy.spawn("firefox-developer-edition")),
+    Key(["control", alt], "f", lazy.spawn("firefox")),
     Key(["control", alt], "c", lazy.spawn("chromium")),
-    Key(["control", alt], "m", lazy.spawn("midori")),
     Key(["control", alt], "space", lazy.spawn("lxtask")),
+    Key(["control", "shift"], "c", lazy.spawn("code")),
     Key([], "Print", lazy.spawn("scrot")),
     # cmus control
     Key(["control", alt], "ntilde", lazy.spawn("cmus-remote -u")),
@@ -115,39 +118,44 @@ keys = [
 
 # My groups (workspaces) "im", "w", "d", "d2", "img", "mm", "vm"
 groups = [
-    Group("im",
-          matches=[Match(wm_class=["Franz"]),
-                   Match(wm_class=["Pidgin"])]),
-    Group("w",
-          matches=[Match(wm_class=["Firefox"]),
-                   Match(wm_class=["Chromium"])]),
-    Group("d",
-          matches=[Match(wm_class=["Atom"]),
-                   Match(wm_class=["Code"]),
-                   Match(wm_class=["Subl3"])]),
-    Group("d2",
-          matches=[Match(wm_class=["Zeal"]),
-                   Match(wm_class=["Gvim"])]),
-    Group("img",
-          matches=[Match(wm_class=["Gimp"]),
-                   Match(wm_class=["Darktable"]),
-                   Match(wm_class=["Inkscape"]),
-                   Match(wm_class=["Simple-scan"]),
-                   Match(wm_class=["Nitrogen"])]),
-    Group("mm",
-          matches=[Match(wm_class=["Smplayer"]),
-                   Match(wm_class=["Audacious"]),
-                   Match(title=["cmus"])]),
-    Group("vm",
-          matches=[Match(wm_class=["Virtualbox"])]),
+    Group(
+        "im",
+        matches=[
+            Match(wm_class=["Firefox"]),
+            Match(wm_class=["Hexchat"]),
+            Match(wm_class=["skypeforlinux"])
+        ]),
+    Group(
+        "w",
+        matches=[
+            Match(wm_class=["Firefox Developer Edition"]),
+            Match(wm_class=["Chromium"])
+        ]),
+    Group("d", matches=[Match(wm_class=["Atom"]),
+                        Match(wm_class=["Code"])]),
+    Group("d2", matches=[Match(wm_class=["Zeal"])]),
+    Group(
+        "img",
+        matches=[
+            Match(wm_class=["Gimp"]),
+            Match(wm_class=["Darktable"]),
+            Match(wm_class=["Inkscape"]),
+            Match(wm_class=["Simple-scan"]),
+            Match(wm_class=["Nitrogen"])
+        ]),
+    Group(
+        "mm",
+        matches=[
+            Match(wm_class=["mpv"]),
+            Match(wm_class=["Audacious"]),
+            Match(title=["cmus"]),
+            Match(wm_class=["Vlc"])
+        ]),
+    Group("vm", matches=[Match(wm_class=["Virtualbox"])]),
 ]
 
 # Layouts configuration
-border = dict(
-    border_focus='#8FC971',
-    border_normal='#CDCDCD',
-    border_width=4
-)
+border = dict(border_focus='#8FC971', border_normal='#CDCDCD', border_width=4)
 layouts = [
     layout.Max(),
     layout.MonadTall(**border),
@@ -166,26 +174,34 @@ screens = [
         top=bar.Bar(  # bar on top
             [
                 widget.GroupBox(),
-                widget.Prompt(ignore_dups_history=True),
+                widget.Prompt(),
                 # shows actual group tasklist
                 widget.TaskList(fontsize=14, highlight_method='block'),
-                widget.Cmus(),
+                widget.Cmus(max_chars=50),
                 # shows current layout name
                 widget.CurrentLayout(),
                 widget.Systray(),
+                widget.Battery(
+                    charge_char='↑',
+                    foreground='09c25a',
+                    discharge_chart='↓',
+                    update_delay=300),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p')
             ],
             25,  # bar height
             background=["#000000", "#232323"],  # bar with gradient background
-        ),
-    ),
+        ), ),
 ]
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
+    Drag([mod],
+         "Button1",
+         lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
+    Drag([mod],
+         "Button3",
+         lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
@@ -196,7 +212,8 @@ main = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=None, **border)
+FLOAT_RULES = [dict(wmclass="gcolor3")]
+floating_layout = layout.Floating(float_rules=FLOAT_RULES, **border)
 auto_fullscreen = True
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this

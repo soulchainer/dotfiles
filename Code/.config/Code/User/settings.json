@@ -1,46 +1,26 @@
-// Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
 {
-// Editor
-  // Controla la familia de fuentes.
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
-  // Controla el tamaño de fuente en píxeles.
-  "editor.fontSize": 15,
-  // Columnas en las que mostrar reglas verticales
+  "editor.fontSize": 16,
   "editor.rulers": [
     80
   ],
-  // Al abrir un archivo, se detectarán `editor.tabSize` y `editor.insertSpaces` en función del contenido del archivo.
-  "editor.detectIndentation": false,
-  // El número de espacios a los que equivale una tabulación. Este valor se invalida según el contenido del archivo cuando `editor.detectIndentation` está activado.
   "editor.tabSize": 2,
-  // Controla si las selecciones tienen esquinas redondeadas
   "editor.roundedSelection": false,
-  // Controla si el editor se seguirá desplazando después de la última línea
   "editor.scrollBeyondLastLine": false,
-  // Controls if the minimap is shown
   "editor.minimap.enabled": false,
-  // Controla si las líneas deben ajustarse. Las líneas se ajustarán en min(editor.wrappingColumn, viewportWidthInColumns).
-  "editor.wordWrap": "wordWrapColumn",
-  // Controls the wrapping column of the editor when `editor.wordWrap` is 'wordWrapColumn' or 'bounded'.
+  "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 80,
   // Inserta fragmentos de código cuando el prefijo coincide. Funciona mejor si la opción 'quickSuggestions' no está habilitada.
-  "editor.tabCompletion": true,
-  // Habilita las ligaduras tipográficas.
+  "editor.tabCompletion": "on",
   "editor.fontLigatures": true,
   // Controla cómo debe representar el editor los espacios en blanco. Las posibilidades son "none", "boundary" y "all". La opción "boundary" no representa los espacios individuales entre palabras.
-  "editor.renderWhitespace": "all",
-  // Controla si el editor debe representar caracteres de control
+  "editor.renderWhitespace": "boundary",
   "editor.renderControlCharacters": true,
-  // Controla si el editor debe representar guías de sangría.
   "editor.renderIndentGuides": true,
-  // Controls if the editor should allow to move selections via drag and drop.
   "editor.dragAndDrop": true,
-
-// Área de trabajo
-  // Controla la posición de los botones de cierre de pestañas del editor o los deshabilita si se establece en "off".
+  "editor.overviewRulerBorder": false,
   "workbench.editor.tabCloseButton": "off",
-
-// Ventana
+  // Ventana
   // Controla si las carpetas deben abrirse en una ventana nueva o reemplazar la última ventana activa.
   // - default: las carpetas se abrirán en una ventana nueva, a menos que se seleccione una carpeta desde la aplicación (por ejemplo, desde el menú Archivo)
   // - on: las carpetas se abrirán en una ventana nueva
@@ -49,20 +29,17 @@
   "window.openFoldersInNewWindow": "on",
   // Controla la visibilidad de la barra de menús. El valor "alternar" significa que la barra de menús está oculta y que se mostrará al presionar una sola vez la tecla Alt. La barra de menús estará visible de forma predeterminada, a menos que se use el modo de pantalla completa para la ventana.
   "window.menuBarVisibility": "toggle",
-
-// Depurar
+  // Depurar
   // Mostrar valores de variable en línea en el editor durante la depuración
   "debug.inlineValues": true,
-
-// Git
+  // Git
   // Ruta del Git ejecutable
   "git.path": "/usr/bin/git",
   // Si la búsqueda automática está habilitada.
   "git.autofetch": false,
   // Confirmar antes de sincronizar repositorios GIT.
   "git.confirmSync": true,
-
-// CSS
+  // CSS
   // Do not use duplicate style definitions
   "css.lint.duplicateProperties": "warning",
   // Import statements do not load in parallel
@@ -81,8 +58,7 @@
   "css.lint.float": "warning",
   // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
   "css.lint.idSelector": "warning",
-
-// SCSS (Sass)
+  // SCSS (Sass)
   // Do not use duplicate style definitions
   "scss.lint.duplicateProperties": "warning",
   // Import statements do not load in parallel
@@ -101,8 +77,7 @@
   "scss.lint.float": "warning",
   // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
   "scss.lint.idSelector": "warning",
-
-// LESS
+  // LESS
   // Do not use duplicate style definitions
   "less.lint.duplicateProperties": "warning",
   // Import statements do not load in parallel
@@ -121,60 +96,46 @@
   "less.lint.float": "warning",
   // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
   "less.lint.idSelector": "warning",
-
-// HTML
+  // HTML
   // Indent <head> and <body> sections.
   "html.format.indentInnerHtml": true,
   // Format and indent {{#foo}} and {{/foo}}.
   "html.format.indentHandlebars": true,
-  // Configures if the built-in HTML language support suggests Angular V1 tags and properties.
-  "html.suggest.angular1": false,
-  // Configures if the built-in HTML language support suggests Ionic tags, properties and values.
-  "html.suggest.ionic": false,
-
-// La configuración predeterminada se reemplaza
+  // La configuración predeterminada se reemplaza
   // Establecer los valores de configuración que se reemplazarán para el lenguaje [markdown].
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn"
   },
   // Establecer los valores de configuración que se reemplazarán para el lenguaje [python].
   "[python]": {
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
   // Establecer los valores de configuración que se reemplazarán para el lenguaje [rust].
   "[rust]": {
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
-
-// Prettier
+  // Prettier
   // A list of languages IDs to disable this extension on
-  "prettier.disableLanguages": [
-    "markdown"
-  ],
-
-// PHP
+  "prettier.disableLanguages": ["markdown"],
+  // PHP
   // Indica si la validación de PHP está habilitada o no.
   "php.validate.enable": false,
   // Señala al ejecutable PHP.
   "php.validate.executablePath": null,
-
-// Terminal externo
+  // Terminal externo
   // Personaliza qué terminal debe ejecutarse en Linux.
   "terminal.external.linuxExec": "urxvtc",
-
-// Terminal integrado
+  // Terminal integrado
   // Controla la familia de fuentes del terminal, que está establecida de manera predeterminada en el valor de editor.fontFamily.
   "terminal.integrated.fontFamily": "'Fira Code'",
   // Controla el tamaño de la fuente en píxeles del terminal.
   "terminal.integrated.fontSize": 16,
   // Controla si las variables de configuración regional se definen al inicio del terminal. El valor predeterminado es true en OS X y false en las demás plataformas.
   "terminal.integrated.setLocaleVariables": true,
-
-// puglint configuration options
+  // puglint configuration options
   // Control whether pug-lint is enabled for Pug/Jade files or not.
   "puglint.enable": true,
-
-// Python Configuration
+  // Python Configuration
   // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
   "python.pythonPath": "/usr/bin/python",
   // Whether to lint Python files.
@@ -205,9 +166,7 @@
   "python.unitTest.pyTestArgs": [],
   // Python launch arguments to use when executing a file in the terminal.
   "python.terminal.launchArgs": [],
-
   "workbench.colorTheme": "Monokai",
-  "workbench.iconTheme": "vscode-icons",
   "window.zoomLevel": 1,
   "gitlens.keymap": "chorded",
   "gitlens.advanced.messages": {
@@ -220,11 +179,53 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
   },
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-
-// Emmet
-  // Cuando se habilita, se expande la abreviación Emmet al presionar la tecla TAB. 
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  // Emmet
+  // Cuando se habilita, se expande la abreviación Emmet al presionar la tecla TAB.
   "emmet.triggerExpansionOnTab": true,
-  "gitlens.historyExplorer.enabled": true,
+
+  // Rust
+  // Path to rustup executable
+  "rust-client.rustupPath": "/home/soulchainer/.cargo/bin/rustup",
+  // Update the RLS whenever the extension starts up.
+  "rust-client.updateOnStartup": true,
+  // Enable all Cargo features.
+  "rust.all_features": true,
+  "rust.clippy_preference": "on",
+  // When specified, RLS will use the Rustfmt pointed at the path instead of the bundled one
+  "rust.rustfmt_path": "/home/soulchainer/.cargo/bin/rustfmt",
+  // Enable unstable features.
+  "rust.unstable_features": true,
+  "editor.formatOnType": false,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "window.titleBarStyle": "native",
+  "window.restoreWindows": "all",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "liveshare.accountProvider": "github",
+  "liveshare.features": "experimental",
+  "liveshare.guestApprovalRequired": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.tabSizing": "shrink",
+  "editor.accessibilitySupport": "off",
+  "files.eol": "\n",
+  "files.useExperimentalFileWatcher": true,
+  "workbench.useExperimentalGridLayout": true,
+  "breadcrumbs.enabled": true,
+  "explorer.sortOrder": "type",
+  "extensions.closeExtensionDetailsOnViewChange": true,
+  "sync.askGistName": true,
+  "css.lint.ieHack": "warning",
+  "grunt.autoDetect": "off",
+  "npm.packageManager": "yarn",
+  "svg.preview.autoOpen": true,
+  "workbench.editor.enablePreview": false
 }
