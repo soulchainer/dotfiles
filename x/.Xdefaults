@@ -11,7 +11,7 @@ URxvt*background:				[90]#000000
 urxvt*transparent: true
 urxvt*shading: 10
 URxvt*scrollBar_right:				true
-URxvt*font:					xft:Inconsolata:pixelsize=17:antialias=true:hinting=true
+URxvt.font:                                     xft:FiraCode:size=12:antialias=true:hinting=true
 URxvt*cursorBlink:				true
 URxvt*cursorUnderline:				true
 URxvt*scrollColor:				#111111

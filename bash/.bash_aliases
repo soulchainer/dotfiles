@@ -29,9 +29,6 @@ alias apacher='sudo systemctl restart httpd.service'
 alias mysqli='sudo systemctl start mysqld.service'
 alias mysqls='sudo systemctl stop mysqld.service'
 
-## SSH
-alias pissh='ssh -p 7766 osmc@192.168.1.11'
-
 ## QTILE
 alias dqtile='startx $QTILE_DEV/.xinitrc'
 alias xqtile='startx $QTILE_DEV/.xtrace-xinitrc'
@@ -52,10 +49,12 @@ alias venvoff='deactivate'  # leave the environment
 alias rmvenv='rmvirtualenv' # remove an environment (name given)
 alias lsvenv='lssitepackages' # list content of venv's site-packages folder
 
-## PELICAN
-alias blog='cd ~/Desarrollo/OLD_DEV/Proyectos/Web/blog/ && venvson && workon blog'
-alias pelicanup='pelican -s publishconf.py'
-
 ## PHP
 # Simple HTTP server (root folder is the current folder)
 alias phpserv='php -S localhost:8000'
+
+## TESTCAFÉ
+alias tests='node_modules/.bin/testcafe "chrome --start-maximized" --debug-on-fail --dev --selector-timeout 6000 --assertion-timeout 6000 --skip-js-errors'
+alias testc='node_modules/.bin/testcafe "chrome --start-maximized" --debug-on-fail --dev --selector-timeout 6000 --assertion-timeout 6000 --skip-js-errors -c 4'
+alias testsf='node_modules/.bin/testcafe "firefox --start-maximized" --debug-on-fail --dev --selector-timeout 6000 --assertion-timeout 6000 --skip-js-errors'
+alias testcf='node_modules/.bin/testcafe "firefox --start-maximized" --debug-on-fail --dev --selector-timeout 6000 --assertion-timeout 6000 --skip-js-errors -c 4'

@@ -52,7 +52,7 @@ GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FI
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 
 # source the gitprompt script
-source ~/.bash-git-prompt/gitprompt.sh
+# source ~/.bash-git-prompt/gitprompt.sh
 
 # By default, the general appearance of the git prompt is::
 
@@ -175,8 +175,6 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

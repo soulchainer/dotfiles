@@ -251,7 +251,6 @@
   rs              Serbian
   si              Slovenian
   sk              Slovak
-  soul_kbd        Spanish (República Independiente de mi Casa)
   es              Spanish
   se              Swedish
   ch              German (Switzerland)
@@ -599,7 +598,7 @@
   nodeadkeys      es: Spanish (no dead keys)
   winkeys         es: Spanish (Win keys)
   deadtilde       es: Spanish (dead tilde)
-  soul_custom_kbd es: Spanish (Super_L en Control_R, Control_R en Bloq Despl)
+  soul_custom_kbd es: Spanish (Intercambia la tecla Return con tecla cedilla y cierre llaves)
   sundeadkeys     es: Spanish (with Sun dead keys)
   dvorak          es: Spanish (Dvorak)
   ast             es: Asturian (Spain, with bottom-dot H and bottom-dot L)

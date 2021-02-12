@@ -100,6 +100,7 @@ keys = [
     # APP KEYBINDINGS
     Key([mod], "Return", lazy.spawn("urxvtc")),
     Key([mod], "f", lazy.spawn("thunar")),
+    Key([mod], "t", lazy.spawn("thunderbird")),
     Key([mod], "e", lazy.spawn("pluma")),
     Key([mod], "z", lazy.spawn("zeal")),
     Key([mod], "q", lazy.spawn("xkill")),
@@ -125,38 +126,37 @@ keys = [
 
 # My groups (workspaces) "im", "w", "d", "d2", "img", "mm", "vm"
 groups = [
-    Group(
-        "im",
-        matches=[
-            Match(wm_class=["Firefox"]),
-            Match(wm_class=["skypeforlinux"])
-        ]),
-    Group(
-        "w",
-        matches=[
-            Match(wm_class=["Firefox Developer Edition"]),
-            Match(wm_class=["Chromium"])
-        ]),
+    Group("im",
+          matches=[
+              Match(wm_class=["Firefox"]),
+              Match(wm_class=["skypeforlinux"]),
+              Match(wm_class=["Ripcord"])
+          ]),
+    Group("w",
+          matches=[
+              Match(wm_class=["Firefox Developer Edition"]),
+              Match(wm_class=["Chromium"])
+          ]),
     Group("d", matches=[Match(wm_class=["Atom"]),
                         Match(wm_class=["Code"])]),
-    Group("d2", matches=[Match(wm_class=["Zeal"])]),
-    Group(
-        "img",
-        matches=[
-            Match(wm_class=["Gimp"]),
-            Match(wm_class=["Darktable"]),
-            Match(wm_class=["Inkscape"]),
-            Match(wm_class=["Simple-scan"]),
-            Match(wm_class=["Nitrogen"])
-        ]),
-    Group(
-        "mm",
-        matches=[
-            Match(wm_class=["mpv"]),
-            Match(wm_class=["Audacious"]),
-            Match(title=["cmus"]),
-            Match(wm_class=["Vlc"])
-        ]),
+    Group("d2",
+          matches=[Match(wm_class=["Zeal"]),
+                   Match(wm_class=["Thunderbird"])]),
+    Group("img",
+          matches=[
+              Match(wm_class=["Gimp"]),
+              Match(wm_class=["Darktable"]),
+              Match(wm_class=["Inkscape"]),
+              Match(wm_class=["Simple-scan"]),
+              Match(wm_class=["Nitrogen"])
+          ]),
+    Group("mm",
+          matches=[
+              Match(wm_class=["mpv"]),
+              Match(wm_class=["Audacious"]),
+              Match(title=["cmus"]),
+              Match(wm_class=["Vlc"])
+          ]),
     Group("vm", matches=[Match(wm_class=["Virtualbox"])]),
 ]
 
@@ -188,11 +188,10 @@ def get_shared_widget_config():
         # shows current layout name
         widget.CurrentLayout(),
         widget.Systray(),
-        widget.Battery(
-            charge_char='▲',
-            foreground='09c25a',
-            discharge_chart='▼',
-            update_delay=300),
+        widget.Battery(charge_char='▲',
+                       foreground='09c25a',
+                       discharge_chart='▼',
+                       update_delay=300),
         widget.Clock(format='%d-%m-%Y %a %I:%M %p')
     ]
 
@@ -203,29 +202,25 @@ screens = [
             get_shared_widget_config(),
             25,  # bar height
             background=["#000000", "#232323"],  # bar with gradient background
-        ),
-    ),
+        ), ),
     Screen(
         bottom=bar.Bar(  # bar on bottom
             get_shared_widget_config(),
             25,  # bar height
             background=["#000000", "#232323"],  # bar with gradient background
-        ),
-    ),
+        ), ),
 ]
 
 # Drag floating layouts.
 mouse = [
-    Drag(
-        [mod],
-        "Button1",
-        lazy.window.set_position_floating(),
-        start=lazy.window.get_position()),
-    Drag(
-        [mod],
-        "Button3",
-        lazy.window.set_size_floating(),
-        start=lazy.window.get_size()),
+    Drag([mod],
+         "Button1",
+         lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod],
+         "Button3",
+         lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
@@ -235,7 +230,14 @@ main = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-FLOAT_RULES = [dict(wmclass="gcolor3")]
+FLOAT_RULES = [
+    {
+        "wmclass": "gcolor3"
+    },
+    {
+        "wmclass": "Peek"
+    },
+]
 floating_layout = layout.Floating(float_rules=FLOAT_RULES, **border)
 auto_fullscreen = True
 
